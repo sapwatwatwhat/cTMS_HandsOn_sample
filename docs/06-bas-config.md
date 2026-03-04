@@ -20,7 +20,7 @@ Once you are in the development space, you will see a Welcome page from which yo
 
 Copy the following GitHub repository URL into your clipboard:
 
-https://github.com/mauriciolauffer/btpcaphadr.git
+https://github.com/mauriciolauffer/btpdevops.git
 
 Click the link **Clone from Git**.
 
@@ -44,7 +44,7 @@ Your development environment is now ready.
 
 From the hamburger menu select **Terminal** and then **New Terminal**
 
-Ensure that your terminal prompt shows `btpcaphadr`. At the terminal prompt, enter `npm install` and press **Enter**. This command will download and install all necessary modules from the npm package repository required to run the application.
+Ensure that your terminal prompt shows `btpdevops`. At the terminal prompt, enter `npm install` and press **Enter**. This command will download and install all necessary modules from the npm package repository required to run the application.
 
 ![alt text](images/bas-config/image-19.png)
 

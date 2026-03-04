@@ -9,3 +9,7 @@
 - [SAP Continuous Integration and Delivery](./05-continuous-integration-delivery.md)
 
 - [BAS Configuration](./06-bas-config.md)
+
+- [Linting](./07-linting.md)
+
+- [CDS Test](./08-cds-test.md)

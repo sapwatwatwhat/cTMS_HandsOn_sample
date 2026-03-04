@@ -1,5 +1,5 @@
 {
-  "name": "btpcaphadr",
+  "name": "btpdevops",
   "version": "1.0.0",
   "private": true,
   "description": "BTP Multi-region High Availability / Disaster Recovery",
@@ -8,33 +8,27 @@
     "watch": "cds watch",
     "build": "mbt build -t gen --mtar archive",
     "deploy": "cf deploy gen/archive.mtar --retries 0 --delete-services",
-    "undeploy": "cf undeploy btpcaphadr --delete-services",
-    "format": "oxfmt"
+    "undeploy": "cf undeploy btpdevops --delete-services",
+    "ci-lint": "cds lint",
+    "format": "oxfmt",
+    "test": "node --test"
   },
   "dependencies": {
-    "@cap-js/hana": "^2.6.0",
+    "@cap-js/sqlite": "^2.1.3",
     "@sap/cds": "^9.7.1",
     "@sap/xssec": "^4.12.2"
   },
   "devDependencies": {
-    "@cap-js/sqlite": "^2.1.3",
+    "@cap-js/cds-test": "^0.4.1",
     "@sap/cds-dk": "^9.7.2",
+    "@sap/eslint-plugin-cds": "^4.1.2",
+    "eslint": "^9.39.3",
     "mbt": "^1.2.43",
-    "oxfmt": "^0.33.0"
+    "oxfmt": "^0.35.0"
   },
   "cds": {
     "requires": {
-      "db-ext": {
-        "[development]": {
-          "model": "db/sqlite"
-        },
-        "[production]": {
-          "model": "db/hana"
-        }
-      },
       "destinations": true,
-      "html5-repo": true,
-      "workzone": true,
       "[production]": {
         "auth": "xsuaa"
       }
