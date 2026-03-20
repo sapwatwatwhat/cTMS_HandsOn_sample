@@ -2,6 +2,10 @@
 
 To address the target end point of the deployment process of MTA Deployment on Cloud Foundry, you can create a destination to SAP Cloud Deployment service with **Basic Authentication** or **OAuth2Password Authentication**.
 
+Create two destinations representing the source (DEV) and the target (PROD) endpoints. After creation, they should look like this:
+
+![alt text](image-7.png)
+
 ## Procedure
 
 1.  In SAP BTP Cockpit of your subaccount, choose _Connectivity_ \> _Destinations_.
@@ -200,6 +204,28 @@ To address the target end point of the deployment process of MTA Deployment on C
     <td valign="top">
 
     Specify the password of the user.
+
+    </td>
+    </tr>
+
+    <tr>
+    <td valign="top">
+
+    _Use default client truststore_
+
+    </td>
+    <td valign="top">
+
+    This checkbox is selected by default.
+
+    If you leave the checkbox selected, the default client truststore with certificates provided by SAP are used.
+
+    If you want to change this, see [Use Destination Certificates \(Cockpit\)](https://help.sap.com/docs/CP_CONNECTIVITY/b865ed651e414196b39f8922db2122c7/d3dfd5052fb14a15aad87ebcdb2f23e2.html?locale=en-US).
+
+    </td>
+    <td valign="top">
+
+     
 
     </td>
     </tr>

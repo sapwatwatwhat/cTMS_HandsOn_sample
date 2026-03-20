@@ -34,10 +34,12 @@ Whether you're a developer looking to automate your workflow or an architect def
 
 - [SAP Cloud Transport Management - Destination](./04-cloud-transport-management-destination.md)
 
-- [SAP Continuous Integration and Delivery](./05-continuous-integration-delivery.md)
+- [SAP Cloud Transport Management - Landscape](./05-cloud-transport-management-landscape.md)
 
-- [BAS Configuration](./06-bas-config.md)
+- [SAP Continuous Integration and Delivery](./06-continuous-integration-delivery.md)
 
-- [Linting](./07-linting.md)
+- [BAS Configuration](./07-bas-config.md)
 
-- [CDS Test](./08-cds-test.md)
+- [Linting](./08-linting.md)
+
+- [CDS Test](./09-cds-test.md)

@@ -67,6 +67,24 @@ Create credentials for deploying your application to SAP BTP, Cloud Foundry envi
 
 6. Choose **Create**.
 
+### Create a Service Key credential for SAP Cloud Transport Management
+
+1. In the **Credentials** tab in SAP Continuous Integration and Delivery, choose **+** _(Create Credentials)_.
+
+   ![Credentials](images/continuous-integration-delivery/credentials.png)
+
+2. For **Name**, enter a freely chosen name for your credentials, which is unique in your SAP BTP subaccount, for example **`ctms-service-key`**.
+
+3. As **Type**, select **Service Key**.
+
+4. For **Service Key**, get the Service Key details from create in the [CTMS exercise](./03-cloud-transport-management.md#create-a-service-instance-and-a-service-key). Copy and paste this service key in the JSON format into the **Service Key** text field.
+
+   ![Service Key Credentials](image-17.png)
+
+   ![ServiceInstance10](images/cloud-transport-management/ServiceInstance10.png)
+
+5. Choose **Create**.
+
 ### (Optional) Configure your GitHub credentials
 
 > **Note:** If your GitHub repository is not private, you can skip this section.
@@ -166,16 +184,25 @@ Configure a basic job for SAP Cloud Application Model projects.
 
 5. For the **Build** stage, keep the default values.
 
-6. The **Acceptance** stage is `optional`. Ignore it in this workshop. Skip to step **7**.
+6. For the **Release** stage, select your preferred transport operation and create a service key credential to connect to SAP Cloud Transport Management.
 
-   For the **Acceptance** stage, enter the following values for the **Deploy to Cloud Foundry Space** step:
-   - **Application Name:** Enter a unique application name.
-   - **API Endpoint:** Enter the URL of your SAP BTP, Cloud Foundry API Endpoint. You can find it in the overview of your subaccount in the SAP BTP cockpit, under the **Cloud Foundry Environment:** tab.
-   - **Org Name:** Enter the name of your Cloud Foundry organization. You can also find it in the overview of your subaccount.
-   - **Space:** Enter the name of the Cloud Foundry space in which you want to test your application.
-   - **Credentials:** From the drop-down list, choose the SAP BTP credentials you created.
+   Choose + (Add) to add the Cloud Transport Management step to your job.
 
-   ![Deploy to CF Space in the UI](images/continuous-integration-delivery/CICD_deploystep.png)
+From the Transport Operation drop-down list, select the action you want to execute to further distribute your deployable file along a transport route in SAP Cloud Transport Management:
+
+Export from: Create a transport request that is added to the queue of the nodes that follow the export node. Choose this option for lifecycles driven by SAP Cloud ALM.
+
+Upload to: Create a transport request that is added to the queue of the upload node in SAP Cloud Transport Management.
+
+In the text field next to the Transport Operation drop-down list, enter the name of the node for the export from or upload to SAP Cloud Transport Management.
+
+![alt text](image-19.png)
+
+To authenticate your job against SAP Cloud Transport Management, use a Service Key credential. See [Creating Credentials](https://help.sap.com/docs/continuous-integration-and-delivery/sap-continuous-integration-and-delivery/creating-credentials).
+
+Choose this credential from the Service Key dropdown list.
+
+![alt text](image-18.png)
 
 7. Switch all other stages off and choose **Create**.
 
