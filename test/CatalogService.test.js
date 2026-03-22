@@ -7,16 +7,11 @@ describe("CatalogService OData APIs", () => {
   it("serves CatalogService.ListOfBooks", async () => {
     const { data } =
       await GET`/odata/v4/catalog/ListOfBooks ${{ params: { $select: "ID,author" } }}`;
-    expect(data.value).to.containSubset([
-      { ID: "18149868-5bff-4f24-818f-6b12596f49bb", author: "author-18149868" },
-    ]);
+    expect(data.value).to.containSubset([{ ID: "201", author: "Emily Brontë" }]);
   });
 
   it("executes submitOrder", async () => {
-    const { data } = await POST`/odata/v4/catalog/submitOrder ${{
-      book: "37630386-9de0-469a-8cc5-0f60841e8969",
-      quantity: 38,
-    }}`;
+    const { data } = await POST`/odata/v4/catalog/submitOrder ${{ book: "201", quantity: 1 }}`;
     // TODO finish this test
     // expect(data.value).to...
   });
