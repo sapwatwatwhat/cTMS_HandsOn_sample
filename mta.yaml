@@ -19,7 +19,8 @@ modules:
       buildpack: nodejs_buildpack
     build-parameters:
       builder: custom
-      commands: []
+      commands:
+        []
     provides:
       - name: srv-api # required by consumers of CAP services (e.g. approuter)
         properties:
